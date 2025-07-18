@@ -26,13 +26,19 @@ class FirstController extends GetxController {
       middleText: result ? 'isPalindrome' : 'not palindrome',
       textConfirm: 'OK',
       onConfirm: Get.back,
+      buttonColor: const Color(0xFF2B637B),
+      backgroundColor: Colors.white,
     );
   }
 
   void goToSecondScreen() {
     final name = nameController.text.trim();
     if (name.isEmpty) {
-      Get.snackbar('Sorry', 'Please enter your name');
+      Get.snackbar(
+        'Sorry',
+        'Please enter your name',
+        backgroundColor: Colors.white,
+      );
       return;
     }
     Get.toNamed(Routes.SECOND, arguments: {'name': name});

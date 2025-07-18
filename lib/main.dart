@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       getPages: AppRoute.routes,
       title: "Suitmedia intern test",
       theme: ThemeData(
-        scaffoldBackgroundColor: const Color(0xFFFFFFFF),
+        scaffoldBackgroundColor: const Color.fromARGB(255, 255, 255, 255),
         useMaterial3: true,
       ),
     );

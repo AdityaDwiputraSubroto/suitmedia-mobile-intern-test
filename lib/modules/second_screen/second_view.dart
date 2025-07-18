@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../widgets/custom_appbar.dart';
 import '../../widgets/custom_button.dart';
 import 'second_controller.dart';
 
@@ -10,23 +11,7 @@ class SecondView extends GetView<SecondController> {
     final double topPadding = MediaQuery.of(context).padding.top;
     const double appBarHeight = kToolbarHeight;
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        elevation: 0,
-        backgroundColor: Colors.white,
-        title: const Text(
-          'Second Screen',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
-        ),
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(1.0),
-          child: Container(color: Colors.grey.shade300, height: 1.0),
-        ),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Get.back(),
-        ),
-      ),
+      appBar: CustomAppBar(title: 'Second Screen'),
       body: Stack(
         children: [
           Positioned(
@@ -67,7 +52,6 @@ class SecondView extends GetView<SecondController> {
             ),
           ),
 
-          // BOTTOM: Button
           Positioned(
             bottom: 24,
             left: 24,

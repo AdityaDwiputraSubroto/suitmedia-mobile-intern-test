@@ -36,3 +36,31 @@ class CustomButton extends StatelessWidget {
     );
   }
 }
+
+class AddUserButton extends StatelessWidget {
+  final VoidCallback onPressed;
+
+  const AddUserButton({Key? key, required this.onPressed}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        width: 150,
+        height: 150,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          gradient: LinearGradient(
+            colors: [Color(0xFF4CA1AF), Color(0xFFC4E0E5)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: Center(
+          child: Icon(Icons.person_add_alt_1, color: Colors.white, size: 50),
+        ),
+      ),
+    );
+  }
+}
